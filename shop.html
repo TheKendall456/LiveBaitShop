@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bait Shop - Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="company-name">
+        <h1>Jack's Bait Store</h1>
+    </div>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="shop.html">Buy</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="MainBox4">
+            <div class="container">
+                <div class="column2">
+                    <form id="orderForm" onsubmit="return sendData()">
+                        <div class="form-group">
+                            <label for="first-name">Customer First Name:</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Customer Last Name:</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Customer Phone:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Item">Item Choice:</label>
+                            <select id="Item" name="Item" required>
+                                <option value="">Select Item</option>
+                                <option value="PlasticWorms">Plastic Worms</option>
+                                <option value="CrankBait">Crank Bait</option>
+                                <option value="FishingRod">Fishing Rod</option>
+                                <option value="FishingReel">Fishing Reel</option>
+                                <option value="TackleBox">TackleBox</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Number of items:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" required onchange="calculateTotal()">
+                        </div>
+                        <div class="form-group">
+                            <p>Social Media links:</p>
+                            <a href="#" target="_blank">Facebook</a><br>
+                            <a href="#" target="_blank">Twitter</a><br>
+                            <a href="#" target="_blank">Instagram</a><br>
+                        </div>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="column2">
+                    <div class="form-group">
+                        <p>Other Information you would like to add</p>
+                        <textarea id="OtherInfo" name="OtherInfo" rows="6"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="total">Total Price without tax:</label>
+                        <input type="text" id="total" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+      <p>Contact us at: contact@baitshop.com or at 417-493-2384</p>
+  </footer>
+
+    <script>
+        function calculateTotal() {
+            const selectedItem = document.getElementById('Item').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            
+            let pricePerItem;
+            switch (selectedItem) {
+                case 'PlasticWorms':
+                    pricePerItem = 2.00;
+                    break;
+                case 'CrankBait':
+                    pricePerItem = 2.00;
+                    break;
+                case 'FishingRod':
+                    pricePerItem = 20.00;
+                    break;
+                case 'FishingReel':
+                    pricePerItem = 8.00;
+                    break;
+                case 'TackleBox':
+                    pricePerItem = 15.00;
+                    break;
+                default:
+                    pricePerItem = 0;
+            }
+        
+            const total = quantity * pricePerItem;
+            document.getElementById('total').value = total.toFixed(2);
+        }
+
+        function sendData() {
+            const firstName = document.getElementById("first-name").value;
+            const lastName = document.getElementById("last-name").value;
+            const phone = document.getElementById("phone").value;
+            const itemChoice = document.getElementById("Item").value;
+            const quantity = document.getElementById("quantity").value;
+            const otherInfo = document.getElementById("OtherInfo").value;
+            const total = document.getElementById("total").value;
+          
+            // Redirect to the "thankyou.html" page with form data in query parameters
+            const queryString = `firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&phone=${encodeURIComponent(phone)}&itemChoice=${encodeURIComponent(itemChoice)}&quantity=${encodeURIComponent(quantity)}&otherInfo=${encodeURIComponent(otherInfo)}&total=${encodeURIComponent(total)}`;
+            const url = `thankyou.html?${queryString}`;
+            window.location.replace(url);
+            
+            return false;
+        }
+
+        // Add an event listener to the form submission
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            sendData();
+        });
+    </script>
+</body>
+</html>

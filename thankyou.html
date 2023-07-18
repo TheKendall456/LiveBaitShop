@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Bait Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="company-name">
+        <h1>Jack's Bait Store</h1>
+    </div>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="shop.html">Buy</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="MainBox4">
+            <div class="container">
+               
+                <div class="form-group">
+                    <h1>Your Reciept</h1>
+                    <p>Customer First Name: <span id="first-name"></span></p>
+                    <p>Customer Last Name: <span id="last-name"></span></p>
+                    <p>Customer Phone: <span id="phone"></span></p>
+                    <p>Item Choice: <span id="item-choice"></span></p>
+                    <p>Number of items: <span id="quantity"></span></p>
+                    <p>Other Information: <span id="other-info"></span></p>
+                    <p>Total Price without tax: $<span id="total"></span></p>
+                    <br>
+                    <h1>Thank you for shopping at</h1>
+                    <h1>Jack's Bait Store Online</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contact us at: contact@baitshop.com or at 417-493-2384</p>
+    </footer>
+
+    <script>
+        // Retrieve query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('firstName');
+        const lastName = urlParams.get('lastName');
+        const phone = urlParams.get('phone');
+        const itemChoice = urlParams.get('itemChoice');
+        const quantity = urlParams.get('quantity');
+        const otherInfo = urlParams.get('otherInfo');
+        const total = urlParams.get('total');
+
+        // Fill the form data into the HTML elements
+        document.getElementById("first-name").textContent = firstName;
+        document.getElementById("last-name").textContent = lastName;
+        document.getElementById("phone").textContent = phone;
+        document.getElementById("item-choice").textContent = itemChoice;
+        document.getElementById("quantity").textContent = quantity;
+        document.getElementById("other-info").textContent = otherInfo;
+        document.getElementById("total").textContent = total;
+    </script>
+</body>
+</html>

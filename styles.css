@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('lake.jpg');
+    background-size: cover;
+}
+.MainBox1 h1, .MainBox1 h2{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.company-name {
+    text-align: center;
+    padding: 10px;
+   background-color: black;
+}
+
+.company-name h1 {
+    font-size: 24px;
+    margin: 0;
+    color: white;
+}
+
+h1, h2{
+    color: black;
+    align-items: center;
+}
+p{
+    color: black;
+}
+
+header, footer {
+    background-color: #6890a0;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    border-color: black;
+    border-bottom:solid black ;
+    border-top:solid black;
+    width: 100%;
+}
+header{
+    font-size: 10px;
+}
+
+nav {
+    
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid black; /* Add this line to set the border */
+    border-radius: 7px; 
+    padding: 10px;
+    background-color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+.mainbox-container {
+    display: flex;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px; /* Adjust the spacing between the boxes if needed */
+}
+
+.MainBox1 {
+    flex: 1;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: auto;
+    display: flex;
+    text-align: center;
+    padding: 50px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    align-items: left;
+    max-width: 30%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.MainBox2 {
+    flex: 1;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: auto;
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    align-items: left;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.MainBox3 {
+    flex: 1;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: auto;
+    display: flex;
+    text-align: center;
+    padding: 50px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    align-items: left;
+    max-width: 30%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.MainBox4 {
+   
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: auto;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    align-items: left;
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+    
+}
+.ImageBox{
+
+}
+h1{
+    text-align: center;
+}
+/* Styling for the YouTube video container */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width) */
+    overflow: hidden; /* Hide any overflow, ensuring the video stays within the container */
+}
+
+/* Styling for the embedded YouTube video */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove the border */
+}
+
+@media screen and (max-width:700px){
+    
+    .MainBox3, .MainBox2, .MainBox1 {
+        flex:1;
+        flex-direction: column;
+        background-color: #f0f0f0;
+        height: auto;
+        display: flex;
+        text-align: center;
+        padding: 50px;
+        margin-bottom: 20px;
+        font-size: 15px;
+        align-items: left;
+        max-width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    footer{
+       position: static;
+    }
+}
